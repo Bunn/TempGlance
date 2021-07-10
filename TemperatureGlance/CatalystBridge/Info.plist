@@ -20,5 +20,7 @@
 	<string>1</string>
 	<key>NSPrincipalClass</key>
 	<string>$(PRODUCT_MODULE_NAME).MacPlugin</string>
+	<key>LSUIElement</key>
+	<true/>
 </dict>
 </plist>

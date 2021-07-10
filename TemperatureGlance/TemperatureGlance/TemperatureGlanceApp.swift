@@ -14,6 +14,7 @@ struct TemperatureGlanceApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .hidden()
         }
     }
 }

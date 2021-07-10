@@ -27,6 +27,7 @@
 		31135983269A153400A1B3F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31135982269A153400A1B3F4 /* SwiftUI.framework */; };
 		31135985269A158800A1B3F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31135984269A158800A1B3F4 /* Cocoa.framework */; };
 		31135987269A159000A1B3F4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31135986269A159000A1B3F4 /* AppKit.framework */; };
+		311F7456269A348E007C216A /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311F7455269A348E007C216A /* Sensor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		31135982269A153400A1B3F4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		31135984269A158800A1B3F4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		31135986269A159000A1B3F4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		311F7455269A348E007C216A /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				3113595D269A07BD00A1B3F4 /* TemperatureGlance.entitlements */,
 				31135932269A079C00A1B3F4 /* TemperatureGlanceApp.swift */,
 				31135934269A079C00A1B3F4 /* ContentView.swift */,
+				311F7455269A348E007C216A /* Sensor.swift */,
 				31135976269A0C9300A1B3F4 /* HomeManager.swift */,
 				31135936269A079C00A1B3F4 /* Assets.xcassets */,
 				3113593B269A079C00A1B3F4 /* Info.plist */,
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3113596D269A086400A1B3F4 /* CatalystInterface.swift in Sources */,
+				311F7456269A348E007C216A /* Sensor.swift in Sources */,
 				31135977269A0C9300A1B3F4 /* HomeManager.swift in Sources */,
 				31135969269A083200A1B3F4 /* AppDelegate.swift in Sources */,
 				31135935269A079C00A1B3F4 /* ContentView.swift in Sources */,

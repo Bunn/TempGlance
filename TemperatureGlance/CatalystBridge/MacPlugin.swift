@@ -12,26 +12,18 @@ class MacPlugin: NSObject, CatalystInterface {
     
   
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-    private var windowController: StatusBarMenuWindowController?
+    //private var windowController: StatusBarMenuWindowController?
 
     required override init() {
     }
-
-    func displayTemperatures(temperatures: String) {
-        let alert = NSAlert()
-        alert.alertStyle = .informational
-        alert.messageText = "Catalyst Test"
-        alert.informativeText = temperatures
-        alert.addButton(withTitle: "OK")
-        alert.runModal()
-    }
     
     func setupMenuBar() {
+        //thermometer
         if let button = statusItem.button {
             button.title = "🔥"
             button.target = self
-            button.action = #selector(MacPlugin.menuBarClicked)
         }
+        setupMenu()
     }
     
     @objc func menuBarClicked() {
@@ -41,38 +33,36 @@ class MacPlugin: NSObject, CatalystInterface {
     
     @objc func toggleUIVisible(_ sender: Any?) {
         setupMenu()
-        return
-        if windowController == nil || windowController?.window?.isVisible == false {
-            showUI(sender: sender)
-        } else {
-            hideUI()
-        }
+//        return
+//        if windowController == nil || windowController?.window?.isVisible == false {
+//            showUI(sender: sender)
+//        } else {
+//            hideUI()
+//        }
     }
     
     @objc func hideUI() {
-        windowController?.close()
+        //windowController?.close()
     }
 
     func showUI(sender: Any?) {
         
-        if windowController == nil {
-            windowController = StatusBarMenuWindowController(
-                statusItem: statusItem,
-                contentViewController: MenuContentViewController()
-            )
-        }
-        
-        windowController?.showWindow(sender)
+//        if windowController == nil {
+//            windowController = StatusBarMenuWindowController(
+//                statusItem: statusItem,
+//                contentViewController: MenuContentViewController()
+//            )
+//        }
+//
+//        windowController?.showWindow(sender)
     }
     
     public func setupMenu() {
         let menu = NSMenu()
         
         if let values = datasource?.getTemperatures() {
-            var sensor = 1
-            for number in values {
-                let preferencesItem = NSMenuItem(title: "\(sensor) Sensor  \(number)ºC ", action: nil, keyEquivalent: "")
-                sensor += 1
+            for sensor in values {
+                let preferencesItem = NSMenuItem(title: "\(sensor.name) \(sensor.formattedTemperature)", action: nil, keyEquivalent: "")
                 preferencesItem.target = self
                 menu.addItem(preferencesItem)
 

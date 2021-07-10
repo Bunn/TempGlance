@@ -9,7 +9,8 @@ import UIKit
 
 class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     let home = HomeManager()
-    var values = [NSNumber]()
+    var sensors = [SensorInfo]()
+ 
     private lazy var catalystInterface: CatalystInterface? = {
         let bundleFile = "CatalystBridge.bundle"
         guard let bundleURL = Bundle.main.builtInPlugInsURL?.appendingPathComponent(bundleFile),
@@ -23,25 +24,23 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         catalystInterface?.setupMenuBar()
-        
         home.delegate = self
-        
         return true
     }
-    
-
 }
 
 
 extension AppDelegate: CatalystInterfaceDatasource {
-    func getTemperatures() -> [NSNumber] {
-        return values
+    func getTemperatures() -> [SensorInfo] {
+        return sensors
     }
 }
 
 extension AppDelegate: HomeManagerDelegate {
-    func homeManager(homeManager: HomeManager, didReceive temperatures: [NSNumber]) {
-        values = temperatures
+    func homeManager(homeManager: HomeManager, didReceive sensors: [SensorInfo]) {
+        self.sensors = sensors
+        catalystInterface?.setupMenuBar()
     }
+
 }
 
