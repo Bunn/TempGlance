@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct TempGlanceApp: App {
+    let homeManager = HomeManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

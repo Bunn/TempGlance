@@ -15,6 +15,11 @@
 		31023B3A2695A5C500E28F7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31023B0F2695A5C400E28F7F /* ContentView.swift */; };
 		31023B3B2695A5C500E28F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31023B102695A5C500E28F7F /* Assets.xcassets */; };
 		31023B3C2695A5C500E28F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31023B102695A5C500E28F7F /* Assets.xcassets */; };
+		31023B4E2695A60800E28F7F /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31023B4D2695A60800E28F7F /* HomeKit.framework */; };
+		31023B502695A76000E28F7F /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31023B4F2695A76000E28F7F /* HomeManager.swift */; };
+		31023B512695A76000E28F7F /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31023B4F2695A76000E28F7F /* HomeManager.swift */; };
+		31023B522695A76000E28F7F /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31023B4F2695A76000E28F7F /* HomeManager.swift */; };
+		31023B532695A76000E28F7F /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31023B4F2695A76000E28F7F /* HomeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,9 @@
 		31023B302695A5C500E28F7F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31023B342695A5C500E28F7F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		31023B362695A5C500E28F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31023B4B2695A60800E28F7F /* TempGlance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TempGlance.entitlements; sourceTree = "<group>"; };
+		31023B4D2695A60800E28F7F /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
+		31023B4F2695A76000E28F7F /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31023B4E2695A60800E28F7F /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +95,14 @@
 		31023B082695A5C400E28F7F = {
 			isa = PBXGroup;
 			children = (
+				31023B4B2695A60800E28F7F /* TempGlance.entitlements */,
 				31023B0D2695A5C400E28F7F /* Shared */,
 				31023B172695A5C500E28F7F /* iOS */,
 				31023B1E2695A5C500E28F7F /* macOS */,
 				31023B282695A5C500E28F7F /* Tests iOS */,
 				31023B332695A5C500E28F7F /* Tests macOS */,
 				31023B162695A5C500E28F7F /* Products */,
+				31023B4C2695A60800E28F7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +112,7 @@
 				31023B0E2695A5C400E28F7F /* TempGlanceApp.swift */,
 				31023B0F2695A5C400E28F7F /* ContentView.swift */,
 				31023B102695A5C500E28F7F /* Assets.xcassets */,
+				31023B4F2695A76000E28F7F /* HomeManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -149,6 +161,14 @@
 				31023B362695A5C500E28F7F /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		31023B4C2695A60800E28F7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31023B4D2695A60800E28F7F /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31023B392695A5C500E28F7F /* ContentView.swift in Sources */,
+				31023B502695A76000E28F7F /* HomeManager.swift in Sources */,
 				31023B372695A5C500E28F7F /* TempGlanceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31023B3A2695A5C500E28F7F /* ContentView.swift in Sources */,
+				31023B512695A76000E28F7F /* HomeManager.swift in Sources */,
 				31023B382695A5C500E28F7F /* TempGlanceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31023B522695A76000E28F7F /* HomeManager.swift in Sources */,
 				31023B2A2695A5C500E28F7F /* Tests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31023B532695A76000E28F7F /* HomeManager.swift in Sources */,
 				31023B352695A5C500E28F7F /* Tests_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TempGlance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2RUA6XMHC;
 				ENABLE_PREVIEWS = YES;
@@ -492,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TempGlance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2RUA6XMHC;
 				ENABLE_PREVIEWS = YES;
