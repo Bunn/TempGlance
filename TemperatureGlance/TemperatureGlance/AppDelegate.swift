@@ -10,7 +10,7 @@ import UIKit
 class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     let home = HomeManager()
     var sensors = [SensorInfo]()
- 
+    
     private lazy var catalystInterface: CatalystInterface? = {
         let bundleFile = "CatalystBridge.bundle"
         guard let bundleURL = Bundle.main.builtInPlugInsURL?.appendingPathComponent(bundleFile),
@@ -29,7 +29,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     }
 }
 
-
 extension AppDelegate: CatalystInterfaceDatasource {
     func getTemperatures() -> [SensorInfo] {
         return sensors
@@ -41,6 +40,5 @@ extension AppDelegate: HomeManagerDelegate {
         self.sensors = sensors
         catalystInterface?.setupMenuBar()
     }
-
 }
 

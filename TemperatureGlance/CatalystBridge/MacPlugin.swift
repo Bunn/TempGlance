@@ -9,53 +9,23 @@ import AppKit
 
 class MacPlugin: NSObject, CatalystInterface {
     var datasource: CatalystInterfaceDatasource?
-    
-  
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-    //private var windowController: StatusBarMenuWindowController?
-
-    required override init() {
-    }
+    
+    required override init() { }
     
     func setupMenuBar() {
-        //thermometer
         if let button = statusItem.button {
-            button.title = "🔥"
+            
+            let image = NSImage(named: .init("thermometer"))
+            image?.isTemplate = true
+            let size = 17
+            image?.size = NSSize(width: size, height: size)
+            button.image = image
             button.target = self
         }
         setupMenu()
     }
     
-    @objc func menuBarClicked() {
-        toggleUIVisible(self)
-        
-    }
-    
-    @objc func toggleUIVisible(_ sender: Any?) {
-        setupMenu()
-//        return
-//        if windowController == nil || windowController?.window?.isVisible == false {
-//            showUI(sender: sender)
-//        } else {
-//            hideUI()
-//        }
-    }
-    
-    @objc func hideUI() {
-        //windowController?.close()
-    }
-
-    func showUI(sender: Any?) {
-        
-//        if windowController == nil {
-//            windowController = StatusBarMenuWindowController(
-//                statusItem: statusItem,
-//                contentViewController: MenuContentViewController()
-//            )
-//        }
-//
-//        windowController?.showWindow(sender)
-    }
     
     public func setupMenu() {
         let menu = NSMenu()
@@ -63,16 +33,29 @@ class MacPlugin: NSObject, CatalystInterface {
         if let values = datasource?.getTemperatures() {
             for sensor in values {
                 let preferencesItem = NSMenuItem(title: "\(sensor.name) \(sensor.formattedTemperature)", action: nil, keyEquivalent: "")
-                preferencesItem.target = self
                 menu.addItem(preferencesItem)
-
             }
         }
         
+        menu.addItem(NSMenuItem.separator())
         
+        let quitMenuItem = NSMenuItem(title: "Quit", action: #selector(MacPlugin.quit), keyEquivalent: "")
+        quitMenuItem.target = self
+        menu.addItem(quitMenuItem)
         statusItem.menu = menu
-                
     }
     
+    @objc private func quit() {
+        exit(0)
+
+        /*
+         NSApplication.shared.terminate(self)
+         Causes this issue.
+         
+         [Lifecycle] Watchdog: App took too long to enter the background-only state. Exiting immediately! (5.0s)
+         [Lifecycle] Watchdog timeout. Exiting immediately. (App took too long to enter the background-only state.)
+         [Assert] App took too long to enter the background-only state.
+         */
+    }
 }
 

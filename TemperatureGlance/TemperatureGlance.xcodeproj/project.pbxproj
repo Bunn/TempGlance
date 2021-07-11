@@ -20,10 +20,6 @@
 		31135972269A0AF400A1B3F4 /* CatalystBridge.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = 31135962269A07F700A1B3F4 /* CatalystBridge.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		31135977269A0C9300A1B3F4 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31135976269A0C9300A1B3F4 /* HomeManager.swift */; };
 		31135979269A0E8000A1B3F4 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31135978269A0E8000A1B3F4 /* HomeKit.framework */; };
-		3113597B269A11F600A1B3F4 /* StatusBarMenuWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113597A269A11F600A1B3F4 /* StatusBarMenuWindowController.swift */; };
-		3113597D269A121000A1B3F4 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113597C269A121000A1B3F4 /* EventMonitor.swift */; };
-		3113597F269A122500A1B3F4 /* MenuContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113597E269A122500A1B3F4 /* MenuContentViewController.swift */; };
-		31135981269A124C00A1B3F4 /* MenuBarTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31135980269A124C00A1B3F4 /* MenuBarTemperatureView.swift */; };
 		31135983269A153400A1B3F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31135982269A153400A1B3F4 /* SwiftUI.framework */; };
 		31135985269A158800A1B3F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31135984269A158800A1B3F4 /* Cocoa.framework */; };
 		31135987269A159000A1B3F4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31135986269A159000A1B3F4 /* AppKit.framework */; };
@@ -90,10 +86,6 @@
 		3113596F269A08DC00A1B3F4 /* MacPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPlugin.swift; sourceTree = "<group>"; };
 		31135976269A0C9300A1B3F4 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
 		31135978269A0E8000A1B3F4 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
-		3113597A269A11F600A1B3F4 /* StatusBarMenuWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarMenuWindowController.swift; sourceTree = "<group>"; };
-		3113597C269A121000A1B3F4 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		3113597E269A122500A1B3F4 /* MenuContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentViewController.swift; sourceTree = "<group>"; };
-		31135980269A124C00A1B3F4 /* MenuBarTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarTemperatureView.swift; sourceTree = "<group>"; };
 		31135982269A153400A1B3F4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		31135984269A158800A1B3F4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		31135986269A159000A1B3F4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -207,10 +199,6 @@
 			children = (
 				31135964269A07F700A1B3F4 /* Info.plist */,
 				3113596F269A08DC00A1B3F4 /* MacPlugin.swift */,
-				3113597C269A121000A1B3F4 /* EventMonitor.swift */,
-				3113597A269A11F600A1B3F4 /* StatusBarMenuWindowController.swift */,
-				3113597E269A122500A1B3F4 /* MenuContentViewController.swift */,
-				31135980269A124C00A1B3F4 /* MenuBarTemperatureView.swift */,
 			);
 			path = CatalystBridge;
 			sourceTree = "<group>";
@@ -424,12 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31135981269A124C00A1B3F4 /* MenuBarTemperatureView.swift in Sources */,
 				31135970269A08DC00A1B3F4 /* MacPlugin.swift in Sources */,
-				3113597F269A122500A1B3F4 /* MenuContentViewController.swift in Sources */,
-				3113597B269A11F600A1B3F4 /* StatusBarMenuWindowController.swift in Sources */,
 				3113596E269A086400A1B3F4 /* CatalystInterface.swift in Sources */,
-				3113597D269A121000A1B3F4 /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
