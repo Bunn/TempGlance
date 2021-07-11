@@ -25,13 +25,12 @@ class HomeManager: NSObject {
         let accessories = manager.homes.flatMap{ $0.accessories }
         accessories.forEach { $0.delegate = self }
         
-        let sensors: [SensorInfo] = accessories.compactMap {
-            let name = $0.name
-            if let characteristic = $0.find(serviceType: HMServiceTypeTemperatureSensor,
+        let sensors: [SensorInfo] = accessories.compactMap { accessory in
+            if let characteristic = accessory.find(serviceType: HMServiceTypeTemperatureSensor,
                                             characteristicType: HMCharacteristicMetadataFormatFloat),
                let value = characteristic.value as? NSNumber {
                 characteristic.enableNotification(true) { _ in }
-                return Sensor(name: $0.room?.name ?? name, temperature: value)
+                return Sensor(name: accessory.room?.name ?? accessory.name, temperature: value)
             }
             return nil
         }

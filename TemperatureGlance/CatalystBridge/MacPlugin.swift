@@ -9,7 +9,7 @@ import AppKit
 
 class MacPlugin: NSObject, CatalystInterface {
     var datasource: CatalystInterfaceDatasource?
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    private let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     
     required override init() { }
     
@@ -27,7 +27,7 @@ class MacPlugin: NSObject, CatalystInterface {
     }
     
     
-    public func setupMenu() {
+    func setupMenu() {
         let menu = NSMenu()
         
         if let values = datasource?.getTemperatures() {
